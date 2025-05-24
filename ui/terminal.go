@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time"
 
 	"pw/vault"
 )
@@ -60,9 +59,8 @@ func (t *Terminal) ShowSuccess(message string) {
 
 func (t *Terminal) ShowPasswordEntry(entry interface{}, index int) {
 	if e, ok := entry.(vault.Entry); ok {
-		createdTime := time.Unix(e.Created, 0).Format("2006-01-02 15:04:05")
 		fmt.Printf("\n%d. Service: %s\n   Username: %s\n   Password: %s\n   Created: %s\n",
-			index+1, e.Service, e.Username, e.Password, createdTime)
+			index+1, e.Service, e.Username, e.Password, e.CreatedAt.Format("2006-01-02 15:04:05"))
 	} else {
 		fmt.Printf("\n%d. Invalid entry format\n", index+1)
 	}
