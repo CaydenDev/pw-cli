@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/CaydenDev/pw-cli/actions/workflows/build.yml/badge.svg)](https://github.com/CaydenDev/pw-cli/actions/workflows/build.yml)
+
 Quick Install
 
 1. Build the executable:
